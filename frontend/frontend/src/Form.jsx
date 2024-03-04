@@ -27,6 +27,18 @@ const Form = () => {
     const data = await result.json();
     console.log(data);
   };
+  
+  function clearForm() {
+    setName('');
+    setAddress('');
+    setGSTNumber('');
+    setPincode('');
+    setContactNumber('');
+    setBranchManagerName('');
+    setBranchaddress('');
+    setBranchContact('');
+  }
+
 
   return (
     <div style={{ height: '900px', width: '500px' }} className="container border border-primary  " >
@@ -69,7 +81,7 @@ const Form = () => {
         <div style={{ marginLeft: '-75px' }} className='container  d-flex justify-content-end'>
           {/* <button style={{ marginRight: '10px' }} className='btn btn-danger' type="submit" onClick={addProduct}>Add Location</button> */}
           <button style={{height:'60px' , marginRight: '10px' }} className='btn btn-danger' type="submit" onClick={addProduct}><p>Add Service<br/> Location</p></button>
-          <button className="btn btn-danger" type="reset">Remove  </button>
+          <button className="btn btn-danger" type="reset" onClick={clearForm}>Remove  </button>
         </div>
         <br />
         <button style={{ marginRight: '10px' }} className='btn btn-danger text-warning bg-dark' type="submit" onClick={addProduct}>Submit</button>
